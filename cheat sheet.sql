@@ -34,7 +34,7 @@ CREATE TABLE restaurants (
 );
 
 
-INSERT INTO restaurants(name, location,price_range) values('mcdonalds', 'New York',3),('wendys', 'Denver',2);
+INSERT INTO restaurants(name, location,price_range) values('mcdonalds', 'New York',3),('wendys2', 'Gdańsk',2);
 
 CREATE TABLE restaurants (
   id BIGSERIAL NOT NULL,
@@ -49,3 +49,9 @@ CREATE TABLE restaurants (
   location VARCHAR(50) NOT NULL,
   price_range INT NOT NULL check(price_range >=1 and price_range<=5)
 );
+
+
+UPDATE restaurants SET name = 'red lobster', price_range = 2 WHERE id = 15;
+
+
+DELETE FROM restaurants WHERE id = 8 returning *;
