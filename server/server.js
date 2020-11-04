@@ -2,8 +2,10 @@ require('dotenv').config();
 const morgan = require('morgan');
 const db = require('./db');
 const express = require('express');
-
+const cors = require('cors');
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
@@ -32,7 +34,7 @@ app.get('/api/v1/restaurants/:id', async (req, res) => {
     const results = await db.query(
       // narażone na sql injection
       // `SELECT * FROM restaurants WHERE id = ${id}`
-      `SELECT name FROM restaurants WHERE id = $1`,
+      `SELECT * FROM restaurants WHERE id = $1`,
       [id]
     );
     if (results.rowCount === 0) {
