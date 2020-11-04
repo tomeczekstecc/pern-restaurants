@@ -4,7 +4,7 @@ https://youtu.be/7qAXvOFhlDc
 https://youtu.be/NjYsXuSBZ5U
 
 
-## postgresql cheet sheet
+## postgresql cheat sheet
 
 ```sql
 CREATE TABLE products (
@@ -15,39 +15,54 @@ CREATE TABLE products (
 );
 ```
 
+```sql
 CREATE TABLE restaurants (
   id INT,
   name VARCHAR(50),
   location VARCHAR(50),
   price_range INT
 );
+```
 
+```sql
 INSERT INTO restaurants(id, name, location,price_range) values(123,'mcdonalds', 'New York',3);
+```
 
+```sql
 CREATE TABLE restaurants (
   id BIGSERIAL NOT NULL,
   name VARCHAR(50) NOT NULL,
   location VARCHAR(50) NOT NULL,
   price_range INT NOT NULL
 );
+```
 
-
+```sql
 INSERT INTO restaurants(name, location,price_range) values('mcdonalds', 'New York',3),('wendys2', 'Gdańsk',2);
+```
 
+```sql
 CREATE TABLE restaurants (
   id BIGSERIAL NOT NULL,
   name VARCHAR(50) NOT NULL,
   location VARCHAR(50) NOT NULL,
   price_range INT NOT NULL check(price_range >=1 and price_range<=5)
 );
+```
 
+```sql
 CREATE TABLE restaurants (
   id BIGSERIAL NOT NULL PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
   location VARCHAR(50) NOT NULL,
   price_range INT NOT NULL check(price_range >=1 and price_range<=5)
 );
+```
 
+```sql
 UPDATE restaurants SET name = 'red lobster', price_range = 2 WHERE id = 15;
+```
 
+```sql
 DELETE FROM restaurants WHERE id = 8 returning *;
+```
