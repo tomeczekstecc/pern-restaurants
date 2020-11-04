@@ -38,7 +38,8 @@ CREATE TABLE restaurants (
 ```
 
 ```sql
-INSERT INTO restaurants(name, location,price_range) values('mcdonalds', 'New York',3),('wendys2', 'Gdańsk',2);
+INSERT INTO restaurants(name, location,price_range)
+  values('mcdonalds', 'New York',3),('wendys2', 'Gdańsk',2);
 ```
 
 ```sql

@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import AddRestaurant from '../components/AddRestaurant';
+import Header from '../components/Header';
+import RestaurantsList from '../components/RestaurantsList';
 
 const HomePage = () => {
   return (
     <div>
-      <h2>Home</h2>
+      <Header />
+      <AddRestaurant />
+      <RestaurantsList/>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
