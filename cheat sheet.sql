@@ -50,8 +50,6 @@ CREATE TABLE restaurants (
   price_range INT NOT NULL check(price_range >=1 and price_range<=5)
 );
 
-
 UPDATE restaurants SET name = 'red lobster', price_range = 2 WHERE id = 15;
-
 
 DELETE FROM restaurants WHERE id = 8 returning *;
