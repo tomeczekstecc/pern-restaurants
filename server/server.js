@@ -13,7 +13,9 @@ app.use('/api/v1/restaurants', require('./routes/reviews'));
 
 app.use(morgan('dev'));
 
-const PORT = process.env.PORT;
+console.log(process.env.PGHOST);
+
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () =>
   console.log(`Server is up and listening on port ${PORT}`)
