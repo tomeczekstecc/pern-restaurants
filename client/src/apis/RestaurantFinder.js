@@ -7,9 +7,9 @@ import axios from 'axios';
 // console.log(process.env.NODE_ENV);
 
 const baseURL =
-  process.env.NODE_ENV === 'prooduction'
-    ? 'api/v1/restaurants'
-    : 'http://localhost:4000/api/v1/restaurants';
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:4000/api/v1/restaurants'
+    : 'api/v1/restaurants';
 
 export default axios.create({
   baseURL,

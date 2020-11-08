@@ -1,5 +1,4 @@
-const dotenv = require('dotenv');
-dotenv.config({ path: './config.env' });
+require('dotenv').config()
 const morgan = require('morgan');
 const express = require('express');
 const cors = require('cors');
@@ -15,6 +14,7 @@ app.use('/api/v1/restaurants', require('./routes/reviews'));
 app.use(morgan('dev'));
 
 console.log(process.env.PGHOST);
+console.log(process.env.NODE_ENV);
 
 const PORT = process.env.PORT || 4000;
 
